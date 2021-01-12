@@ -6,9 +6,11 @@ RUN apt-get update && \
         apt-get install --no-install-recommends -yq postgresql postgresql-client bash \
         gcc zip musl-dev libboost-python-dev libboost-system-dev libboost-thread-dev \
         build-essential  python python3 python3-venv python3-dev build-essential \
-        sudo wget curl lsb-release \
+        sudo wget curl lsb-release python3-pip \
         libboost-dev libboost-system-dev libboost-python-dev git && \        
         rm -rf /var/lib/apt/lists/*
+
+
 
 
 
@@ -24,8 +26,6 @@ RUN python2 setup.py v8 && \
         python3 setup.py install && \
         rm -rf v8 build depot_tools 
 
-#RUN mkdir /code
-#WORKDIR /code
-#COPY requirements.pip /code/
-#RUN pip install -U pip
-#RUN pip install -r requirements.pip
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1 && update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1 &&  update-alternatives  --set python /usr/bin/python3.6
+
