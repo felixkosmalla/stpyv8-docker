@@ -6,7 +6,7 @@ RUN apt-get update && \
         apt-get install --no-install-recommends -yq postgresql postgresql-client bash \
         gcc zip musl-dev libboost-python-dev libboost-system-dev libboost-thread-dev \
         build-essential  python python3 python3-venv python3-dev build-essential \
-        sudo wget curl lsb-release python3-pip \
+        sudo wget curl lsb-release python3-pip libpq-dev  \
         libboost-dev libboost-system-dev libboost-python-dev git && \        
         rm -rf /var/lib/apt/lists/*
 
