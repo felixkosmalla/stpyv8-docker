@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 WORKDIR /
 
-RUN git clone https://github.com/felixkosmalla/stpyv8 && git checkout raspi
+RUN git clone https://github.com/felixkosmalla/stpyv8 && cd stpyv8 &&  git checkout raspi
 WORKDIR /stpyv8
 
 
